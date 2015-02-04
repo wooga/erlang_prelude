@@ -30,10 +30,10 @@
 %% API Function Definitions
 %% ==================================================================
 
-reload_app(sbs_lib) ->
-    reload_apps([sbs_lib]);
+reload_app('erlang-prelude') ->
+    reload_apps(['erlang-prelude']);
 reload_app(App) ->
-    reload_apps([sbs_lib, App]).
+    reload_apps(['erlang-prelude', App]).
 
 
 reload_apps(Apps) ->
