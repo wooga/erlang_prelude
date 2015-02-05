@@ -1,6 +1,6 @@
-# erlang-prelude
+# Erlang Prelude
 
-Collection of Erlang modules solving often-encountered problems :-)
+A collection of Erlang modules solving often-encountered problems :-)
 
 ## ep_accessors
 
@@ -29,3 +29,11 @@ Lists helpers such as `find_first`, `group_by`, `sample` and such.
 ## ep_time
 
 Get and convert UNIX timestamps.
+
+# Code Status
+
+[![Build Status](https://api.travis-ci.org/wooga/erlang-prelude.svg?branch=master)](https://travis-ci.org/wooga/erlang-prelude)
+
+# License
+
+Erlang-prelude is released under the [MIT License](http://www.opensource.org/licenses/MIT).
