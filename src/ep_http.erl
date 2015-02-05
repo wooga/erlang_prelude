@@ -2,7 +2,9 @@
 
 -include("conversions.hrl").
 
--export([url_decode/1]).
+-export([ url_decode/1
+        , etag/1
+        ]).
 
 %%
 %% Taken from https://github.com/tim/erlang-percent-encoding/blob/master/src/percent.erl
@@ -27,6 +29,12 @@ url_decode([X | T], Acc) ->
 url_decode([], Acc) ->
     lists:reverse(Acc, []).
 
+etag(Term) ->
+    bin_to_hex(crypto:sha(term_to_binary(Term))).
+
+%% ==================================================================
+%% Internal functions
+%% ==================================================================
 
 -compile({inline, [{hexchr_decode, 1}]}).
 
@@ -38,3 +46,17 @@ hexchr_decode(C) when C >= $0 andalso C =< $9 ->
     C - $0;
 hexchr_decode(_) ->
     throw({ep_http, bad_input}).
+
+digit_to_hex(D) when (D >= 0) and (D < 10) ->
+    D + 48;
+digit_to_hex(D) ->
+    D + 87.
+
+bin_to_hex(Bin) ->
+    bin_to_hex(?b2l(Bin), []).
+
+bin_to_hex([], Acc) ->
+    lists:reverse(Acc);
+bin_to_hex([D | Ds], Acc) ->
+    bin_to_hex(Ds, [ digit_to_hex(D rem 16)
+                   , digit_to_hex(D div 16) | Acc]).
