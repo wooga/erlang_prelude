@@ -6,6 +6,7 @@
 
 -export([ find_first/2
         , find_first/3
+        , group_by/2
         , shuffle/1
         , pick/1
         , sample/2
@@ -28,6 +29,14 @@ find_first(Pred, List, Default) ->
         {value, E} -> E;
         false      -> Default
     end.
+
+
+%% @doc: Group list items by KeyFun into a proplist.
+-spec group_by(fun((Elem :: T) -> term()), [T]) -> [{term(), [T]}].
+group_by(KeyFun, List) ->
+    dict:to_list(
+        lists:foldl(fun(E, D) -> dict:append(KeyFun(E), E, D) end,
+                    dict:new(), List)).
 
 
 %% shuffle(List1) -> List2
