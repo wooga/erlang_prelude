@@ -15,6 +15,6 @@
 find_first(Pred, List) ->
     P = fun(E) -> not Pred(E) end,
     case lists:dropwhile(P, List) of
-        []    -> {error, notfound};
-        [E|_] -> {ok, E}
+        []    -> false;
+        [E|_] -> {value, E}
     end.
