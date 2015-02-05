@@ -1,0 +1,4 @@
+-define(ATTR_READER(Ps),        attr_reader() -> Ps).
+-define(ATTR_WRITER(Ps),        attr_writer() -> Ps).
+-define(ATTR_ACCESSORS,         [P || {P,_} <- attr_accessor()]). % get all property names
+-define(ATTR_ACCESSOR(Ps),      attr_accessor() -> Ps).
