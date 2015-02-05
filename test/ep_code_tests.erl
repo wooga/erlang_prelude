@@ -4,7 +4,10 @@
 
 -define(IT, ep_code).
 
--behaviour(ep_deploy). % just to test has_behaviour/2
+ % just to test has_behaviour/2
+-behaviour(ep_deploy).
+-export([reload/1]).
+reload(_) -> ok.
 
 has_behaviour_test() ->
     ?assertEqual(true, ?IT:has_behaviour(ep_deploy, ?MODULE)),

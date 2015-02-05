@@ -57,7 +57,7 @@ url_encode([], Acc) ->
 
 
 etag(Term) ->
-    bin_to_hex(crypto:sha(term_to_binary(Term))).
+    bin_to_hex(crypto:hash(sha, term_to_binary(Term))).
 
 
 %% ==================================================================
