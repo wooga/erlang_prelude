@@ -13,7 +13,7 @@
 -spec modules_with_behaviour(module()) -> [module()].
 modules_with_behaviour(Behaviour) ->
     lists:filter(fun (Mod) -> has_behaviour(Behaviour, Mod) end,
-        [ Mod || {Mod, _} <- code:all_loaded()]).
+        [ Mod || {Mod, _} <- code:all_loaded() ]).
 
 -spec has_behaviour(atom(), module()) -> boolean().
 has_behaviour(Behaviour, Mod) ->
