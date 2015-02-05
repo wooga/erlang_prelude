@@ -24,7 +24,7 @@ URL encoding and decoding plus generating an etag.
 
 ## ep_lists
 
-Lists helpers such as `find_first`, `group_by`, `sample` and such.
+Lists helpers such as `find_first`, `group_by`, `sample`.
 
 ## ep_time
 
