@@ -1,4 +1,4 @@
-{application, 'erlang-prelude',
+{application, erlang_prelude,
  [
   {description, "Erlang Utility Library"},
   {vsn, "0.0.1"},

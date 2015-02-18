@@ -30,10 +30,10 @@
 %% API Function Definitions
 %% ==================================================================
 
-reload_app('erlang-prelude') ->
-    reload_apps(['erlang-prelude']);
+reload_app(erlang_prelude) ->
+    reload_apps([erlang_prelude]);
 reload_app(App) ->
-    reload_apps(['erlang-prelude', App]).
+    reload_apps([erlang_prelude, App]).
 
 
 reload_apps(Apps) ->

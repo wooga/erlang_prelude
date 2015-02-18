@@ -32,7 +32,7 @@ Get and convert UNIX timestamps.
 
 # Code Status
 
-[![Build Status](https://api.travis-ci.org/wooga/erlang-prelude.svg?branch=master)](https://travis-ci.org/wooga/erlang-prelude)
+[![Build Status](https://api.travis-ci.org/wooga/erlang_prelude.svg?branch=master)](https://travis-ci.org/wooga/erlang_prelude)
 
 # License
 
