@@ -2,11 +2,6 @@
 
 A collection of Erlang modules solving often-encountered problems :-)
 
-## ep_accessors
-
-A parse transformation for generating getters and setters for values in
-a `proplist`.
-
 ## ep_code
 
 Check if modules have a given behaviour or get all modules that have a given
